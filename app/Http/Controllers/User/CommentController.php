@@ -4,10 +4,10 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Post;
-use App\Http\Requests\PostRequest;
+use App\Models\Comment;
+use App\Http\Requests\CommentRequest;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::get();
-        return view('user.post.index', compact('posts'));
+        //
     }
 
     /**
@@ -27,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('user.post.create');
+        //
     }
 
     /**
@@ -36,11 +35,12 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CommentRequest $request)
     {
         $input = $request->all();
-        Post::create($input);
-        return redirect()->route('user.post.index');
+        $input['user_id'] = auth()->user()->id;
+        Comment::create($input);
+        return back();
     }
 
     /**
@@ -51,8 +51,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('user.post.show', compact('post'));
+        //
     }
 
     /**

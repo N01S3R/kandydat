@@ -10,7 +10,7 @@ class Post extends Model
     use HasFactory;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'content'];
     /**
      * Relation one to many Comments
      *
