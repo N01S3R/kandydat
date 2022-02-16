@@ -27,3 +27,7 @@ Route::resource('posts', PostController::class)->middleware(['auth']);
 Route::post('comments', [CommentController::class, 'store'])->middleware(['auth'])->name('comments');
 
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
