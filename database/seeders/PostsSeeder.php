@@ -17,6 +17,7 @@ class PostsSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         Post::create([
+            'user_id' => $faker->name(),
             'title' => $faker->name(),
             'content' => $faker->name(),
         ]);
