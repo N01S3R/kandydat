@@ -28,6 +28,7 @@ class ApiPostController extends Controller
     public function create(Request $post)
     {
         $post = Post::create([
+            'user_id' => $post->user_name,
             'title' => $post->title,
             'content' => $post->content,
         ]);

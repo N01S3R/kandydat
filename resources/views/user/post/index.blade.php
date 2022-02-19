@@ -12,6 +12,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">User ID</th>
                                     <th scope="col">Title</th>
                                     <th scope="col">Content</th>
                                 </tr>
@@ -20,6 +21,7 @@
                                 @foreach ($posts as $post)
                                     <tr>
                                         <th scope="row">{{ $post->id }}</th>
+                                        <td>{{ $post->user_id }}</td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->content }}</td>
                                     </tr>
