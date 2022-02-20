@@ -33,7 +33,7 @@ class ApiPostController extends Controller
             'title' => $atributes['title'],
             'content' => $atributes['content'],
         ]);
-        $post->save();
+
         return new PostResource($post);
     }
 
