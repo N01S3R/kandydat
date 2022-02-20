@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\API\ApiPostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PostController;
 use App\Http\Controllers\User\CommentController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +32,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('posts', PostController::class)->middleware(['auth']);
 Route::post('comments', [CommentController::class, 'store'])->middleware(['auth'])->name('comments');
-Route::resource('api/post', ApiPostController::class);
