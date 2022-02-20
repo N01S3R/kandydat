@@ -70,6 +70,6 @@ class ApiPostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return response()->json('Skasowany');
+        return response()->json('Post has been deleted');
     }
 }
