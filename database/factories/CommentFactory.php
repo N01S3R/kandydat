@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PostFactory extends Factory
+class CommentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,8 +14,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->unique()->randomDigit(),
-            'title' => $this->faker->sentence(),
+            'user_name' => $this->faker->unique()->name(),
+            'post_id' => $this->faker->randomDigit(),
             'content' => $this->faker->text($maxNbChars = 100),
         ];
     }

@@ -31,4 +31,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('posts', PostController::class)->middleware(['auth']);
-Route::post('comments', [CommentController::class, 'store'])->middleware(['auth'])->name('comments');
+Route::resource('comments', CommentController::class)->middleware(['auth']);

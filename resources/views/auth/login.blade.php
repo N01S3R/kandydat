@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -62,6 +62,23 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Default User</div>
+
+                <div class="card-body">
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('User Name') }}</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control mb-3" value="admin@gmail.com" readonly>
+                            </div>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" value="password" readonly>
                             </div>
                         </div>
                     </form>
