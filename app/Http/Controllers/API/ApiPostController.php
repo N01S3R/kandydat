@@ -43,8 +43,9 @@ class ApiPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
+        $post = Post::findOrFail($id);
         return new PostResource($post);
     }
 
